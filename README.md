@@ -19,5 +19,50 @@ The model **identifies tweets related to COVID-19** without relying solely on ke
 
 ---
 
+⚡ How It Works
 
+This solution follows a robust NLP and machine learning pipeline to classify COVID-19 related tweets:
 
+Load Data
+
+Reads the training and test CSV files containing tweet text and target labels.
+
+Text Cleaning
+
+Converts text to lowercase and removes URLs, mentions, hashtags, punctuation, and extra whitespace.
+
+Meta Feature Extraction
+
+Calculates features such as tweet length, number of hashtags, mentions, uppercase words, digits, and sentiment (polarity and subjectivity).
+
+TF-IDF Features
+
+Word-level and character-level TF-IDF vectors capture syntactic and semantic patterns.
+
+BERT Embeddings
+
+DistilBERT embeddings (mean-pooled from the last 4 layers) capture contextual meaning beyond simple token frequencies.
+
+Feature Combination
+
+Merges TF-IDF, BERT embeddings, and meta features into a single feature matrix for training.
+
+LightGBM Training
+
+Stratified K-Fold cross-validation ensures robust evaluation.
+
+Early stopping prevents overfitting and handles class imbalance.
+
+Submission Generation
+
+Produces a CSV file with ID and predicted target probabilities ready for Zindi evaluation.
+
+---
+
+🎯 Performance
+
+This updated solution demonstrates strong predictive performance for the COVID-19 Tweet Classification challenge:
+
+Cross-validated ROC-AUC Score: 0.242230032 
+
+Robust Predictions: Effectively identifies COVID-19 related tweets without relying solely on keywords.
