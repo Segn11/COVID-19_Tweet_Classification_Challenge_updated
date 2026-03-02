@@ -20,7 +20,7 @@ The model classifies tweets related to COVID-19 by combining deep learning (BERT
 
 ✅ Easy Submission: Generates a CSV ready for Zindi evaluation
 
-#⚡ How It Works
+# ⚡ How It Works
 
 This pipeline combines deep learning and classical ML for optimal performance:
 
