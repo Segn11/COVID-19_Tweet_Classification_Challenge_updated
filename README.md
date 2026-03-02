@@ -1,68 +1,91 @@
+##🦠 COVID-19 Tweet Classification – Updated Solution with BERT + LightGBM
 
+This repository contains a state-of-the-art hybrid solution for the Zindi COVID-19 Tweet Classification Challenge
+.
+The model classifies tweets related to COVID-19 by combining deep learning (BERT) and machine learning (LightGBM) for robust predictions.
 
-# 🦠 COVID-19 Tweet Classification – Updated Solution
+##✨ Features
 
-This repository contains a **state-of-the-art solution** for the [Zindi COVID-19 Tweet Classification Challenge](https://zindi.africa/competitions/covid-19-tweet-classification).
-The model **identifies tweets related to COVID-19** without relying solely on keywords like "covid" or "coronavirus".
+✅ Text Preprocessing: Cleans URLs, mentions, hashtags, punctuation, and extra spaces
 
----
+✅ Meta Features: Tweet length, hashtags, mentions, uppercase words, digits, sentiment scores (polarity & subjectivity)
 
-## ✨ Features
+✅ TF-IDF Features: Word-level and character-level n-grams to capture lexical and syntactic patterns
 
-* ✅ **Text Preprocessing:** Cleans URLs, mentions, hashtags, punctuation, and extra spaces
-* ✅ **Meta Features:** Tweet length, hashtags, mentions, uppercase words, sentiment scores
-* ✅ **TF-IDF Features:** Word-level and character-level n-grams
-* ✅ **BERT Embeddings:** DistilBERT mean-pooled embeddings for contextual understanding
-* ✅ **Ensemble Modeling:** Combines TF-IDF, BERT, and meta features
-* ✅ **LightGBM with Stratified K-Fold:** Robust cross-validation and early stopping
-* ✅ **Easy Submission:** Generates CSV for Zindi evaluation
+✅ BERT Embeddings: DistilBERT mean-pooled embeddings provide deep contextual understanding of text
 
----
+✅ Hybrid Modeling: Combines TF-IDF, meta features, and BERT embeddings
 
-⚡ How It Works
+✅ LightGBM with Stratified K-Fold: Robust ML model with cross-validation, early stopping, and handling class imbalance
 
-This solution follows a robust NLP and machine learning pipeline to classify COVID-19 related tweets:
+✅ Easy Submission: Generates a CSV ready for Zindi evaluation
 
-Load Data
+##⚡ How It Works
 
-Reads the training and test CSV files containing tweet text and target labels.
+This pipeline combines deep learning and classical ML for optimal performance:
 
-Text Cleaning
+1️⃣ Load Data
 
-Converts text to lowercase and removes URLs, mentions, hashtags, punctuation, and extra whitespace.
+Reads training and test CSV files containing tweets and target labels.
 
-Meta Feature Extraction
+2️⃣ Text Cleaning
 
-Calculates features such as tweet length, number of hashtags, mentions, uppercase words, digits, and sentiment (polarity and subjectivity).
+Converts text to lowercase
 
-TF-IDF Features
+Removes URLs, mentions, hashtags, punctuation, and extra spaces
 
-Word-level and character-level TF-IDF vectors capture syntactic and semantic patterns.
+3️⃣ Meta Feature Extraction
 
-BERT Embeddings
+Calculates additional features including:
 
-DistilBERT embeddings (mean-pooled from the last 4 layers) capture contextual meaning beyond simple token frequencies.
+Text length, number of hashtags, mentions, uppercase words, digits
 
-Feature Combination
+Sentiment features using TextBlob (polarity & subjectivity)
 
-Merges TF-IDF, BERT embeddings, and meta features into a single feature matrix for training.
+4️⃣ TF-IDF Features
 
-LightGBM Training
+Word-level n-grams capture common terms and phrases
 
-Stratified K-Fold cross-validation ensures robust evaluation.
+Character-level n-grams capture stylistic patterns and spelling variations
 
-Early stopping prevents overfitting and handles class imbalance.
+5️⃣ BERT Embeddings
 
-Submission Generation
+Uses DistilBERT, a pretrained transformer, to generate mean-pooled embeddings
 
-Produces a CSV file with ID and predicted target probabilities ready for Zindi evaluation.
+Captures contextual meaning of tweets beyond simple token frequency
 
----
+These embeddings are not fine-tuned, only used as rich text features
+
+6️⃣ Feature Combination
+
+Combines TF-IDF, character n-grams, BERT embeddings, and meta features
+
+Forms a single hybrid feature matrix for training
+
+7️⃣ LightGBM Training
+
+Stratified K-Fold cross-validation ensures stable evaluation
+
+Early stopping prevents overfitting and handles class imbalance
+
+Predicts probabilities for each tweet
+
+8️⃣ Submission Generation
+
+Outputs a CSV file with ID and predicted probabilities ready for Zindi submission
 
 🎯 Performance
 
-This updated solution demonstrates strong predictive performance for the COVID-19 Tweet Classification challenge:
+This hybrid approach demonstrates strong predictive performance:
 
-Cross-validated ROC-AUC Score: 0.242230032 
+Cross-validated ROC-AUC Score: 0.2422
 
-Robust Predictions: Effectively identifies COVID-19 related tweets without relying solely on keywords.
+Robust Predictions: Accurately identifies COVID-19 related tweets without relying solely on keywords
+
+⚙️ Notes on DL + ML Usage
+
+BERT embeddings provide deep contextual representations of tweet text
+
+LightGBM acts as the final predictive model, leveraging both engineered features and embeddings
+
+This combination allows the model to benefit from deep learning features while remaining efficient and interpretable
