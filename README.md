@@ -1,10 +1,10 @@
-##🦠 COVID-19 Tweet Classification – Updated Solution with BERT + LightGBM
+###🦠 COVID-19 Tweet Classification – Updated Solution with BERT + LightGBM
 
 This repository contains a state-of-the-art hybrid solution for the Zindi COVID-19 Tweet Classification Challenge
 .
 The model classifies tweets related to COVID-19 by combining deep learning (BERT) and machine learning (LightGBM) for robust predictions.
 
-##✨ Features
+###✨ Features
 
 ✅ Text Preprocessing: Cleans URLs, mentions, hashtags, punctuation, and extra spaces
 
@@ -20,7 +20,7 @@ The model classifies tweets related to COVID-19 by combining deep learning (BERT
 
 ✅ Easy Submission: Generates a CSV ready for Zindi evaluation
 
-##⚡ How It Works
+###⚡ How It Works
 
 This pipeline combines deep learning and classical ML for optimal performance:
 
@@ -74,7 +74,7 @@ Predicts probabilities for each tweet
 
 Outputs a CSV file with ID and predicted probabilities ready for Zindi submission
 
-🎯 Performance
+###🎯 Performance
 
 This hybrid approach demonstrates strong predictive performance:
 
@@ -82,7 +82,7 @@ Cross-validated ROC-AUC Score: 0.2422
 
 Robust Predictions: Accurately identifies COVID-19 related tweets without relying solely on keywords
 
-⚙️ Notes on DL + ML Usage
+###⚙️ Notes on DL + ML Usage
 
 BERT embeddings provide deep contextual representations of tweet text
 
