@@ -1,4 +1,4 @@
-#🦠 COVID-19 Tweet Classification – Updated Solution with BERT + LightGBM
+🦠 #COVID-19 Tweet Classification – Updated Solution with BERT + LightGBM
 
 This repository contains a state-of-the-art hybrid solution for the Zindi COVID-19 Tweet Classification Challenge
 .
